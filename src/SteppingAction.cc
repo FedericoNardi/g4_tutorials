@@ -69,11 +69,11 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
   }
 
   // To access timing information 
-  // average time of step - 0.5*(post_time-pre_time)
+  // average time of step - 0.5*(post_time+pre_time)
   // GlobalTime is time since start of the event (set to 0).
   // Can in principle access LocalTime, which is time since start of the new track.
   G4double time = 0.5 * (step->GetPreStepPoint()->GetGlobalTime() + step->GetPostStepPoint()->GetGlobalTime());
-
+}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
